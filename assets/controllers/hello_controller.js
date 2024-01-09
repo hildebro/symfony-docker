@@ -1,4 +1,5 @@
 import {Controller} from '@hotwired/stimulus';
+import {getComponent} from '@symfony/ux-live-component';
 
 /*
  * This is an example Stimulus controller!
@@ -10,7 +11,8 @@ import {Controller} from '@hotwired/stimulus';
  * Delete this file or adapt it for your use!
  */
 export default class extends Controller {
-    connect() {
-        this.element.textContent = 'Hello Stimulus! Edit me in assets/controllers/hello_controller.js';
+    async rerender() {
+        this.component = await getComponent(this.element);
+        this.component.render();
     }
 }

@@ -1,0 +1,7 @@
+<div {{ attributes.defaults(stimulus_controller('hello')) }}>
+    Time: {{ this.timeStamp }}
+    <br/>
+    <button {{ stimulus_action('hello', 'rerender', 'click') }}>
+        rerender
+    </button>
+</div>
